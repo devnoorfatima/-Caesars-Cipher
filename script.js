@@ -11,9 +11,13 @@ function rot13(str) {
         return String.fromCharCode(x - 13);
       }).join('');  
   }
-
-
+ const input =document.getElementById("input");
   function check(){
-    var value = document.getElementById("input").value;
+    let value = input.value;
     document.getElementById("p").innerHTML= rot13(value);
 }
+input.addEventListener("keypress", function(x){
+  if (x.keyCode === 13){
+      check();
+  }
+  });
